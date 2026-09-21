@@ -1,0 +1,6 @@
+note
+Category is not a stable product attribute (each Product ID appears in all 5 categories).
+Region is not a stable store attribute (each Store ID appears in all 4 regions).
+Seasonality labels do not line up with calendar seasons.
+Units sold are always <= inventory; mean sold / mean inventory ≈ 0.5.
+Vendor Demand Forecast is nearly collinear with Units Sold (corr ≈ 0.997).

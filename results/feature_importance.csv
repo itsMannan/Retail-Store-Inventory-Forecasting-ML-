@@ -1,0 +1,541 @@
+feature,importance,model,feature_set
+Inventory Level,64.28594447274648,Linear Regression,operational
+Price,4.880628389856063,Linear Regression,operational
+day_cos,4.299922093331339,Linear Regression,operational
+month_cos,3.9961844535149837,Linear Regression,operational
+price_discount,3.0973501739620395,Linear Regression,operational
+month,2.616061587850498,Linear Regression,operational
+Competitor Pricing,2.5857634095577673,Linear Regression,operational
+Product ID_P0005,2.5231835144648027,Linear Regression,operational
+Product ID_P0017,2.2776449018040554,Linear Regression,operational
+Product ID_P0008,1.8688190032392835,Linear Regression,operational
+weekofyear,1.70614003257546,Linear Regression,operational
+Product ID_P0003,1.5859754657260023,Linear Regression,operational
+Weather Condition_Rainy,1.1904041800540743,Linear Regression,operational
+Product ID_P0007,1.0888955366077808,Linear Regression,operational
+Product ID_P0010,1.0362679006732483,Linear Regression,operational
+Product ID_P0015,1.0126766522756896,Linear Regression,operational
+Weather Condition_Sunny,0.9259894370531174,Linear Regression,operational
+Store ID_S001,0.9228210624031556,Linear Regression,operational
+Product ID_P0016,0.9160614449998408,Linear Regression,operational
+Seasonality_Spring,0.7865284920283113,Linear Regression,operational
+Product ID_P0011,0.745511844682161,Linear Regression,operational
+Product ID_P0018,0.676730135779949,Linear Regression,operational
+dow_sin,0.6630219959266549,Linear Regression,operational
+Product ID_P0006,0.6401373554247143,Linear Regression,operational
+ma_30_sales,0.6388110006246492,Linear Regression,operational
+Product ID_P0020,0.6381892876363425,Linear Regression,operational
+Product ID_P0004,0.6277443597151421,Linear Regression,operational
+Category_Electronics,0.6080435123962186,Linear Regression,operational
+Product ID_P0013,0.6000151897998411,Linear Regression,operational
+Seasonality_Winter,0.4639502665776635,Linear Regression,operational
+Store ID_S005,0.46020656147966377,Linear Regression,operational
+price_to_competitor,0.4601095305276721,Linear Regression,operational
+std_7_sales,0.45067093855595797,Linear Regression,operational
+promo_discount,0.44489115723808625,Linear Regression,operational
+ma_7_sales,0.437370029646744,Linear Regression,operational
+Product ID_P0014,0.4222575359055569,Linear Regression,operational
+discount_rate,0.4021183847000609,Linear Regression,operational
+Discount,0.4021183847000601,Linear Regression,operational
+Weather Condition_Snowy,0.3931013575816814,Linear Regression,operational
+Holiday/Promotion,0.3765554577006749,Linear Regression,operational
+Store ID_S004,0.3713371591975214,Linear Regression,operational
+Seasonality_Autumn,0.3485731436384219,Linear Regression,operational
+Region_North,0.34238526563629357,Linear Regression,operational
+Store ID_S003,0.32622691656720204,Linear Regression,operational
+Category_Clothing,0.32247054568659217,Linear Regression,operational
+day_of_week,0.292769840472792,Linear Regression,operational
+Product ID_P0009,0.24610535517695656,Linear Regression,operational
+Region_South,0.24547637313214,Linear Regression,operational
+Store ID_S002,0.2349495748412037,Linear Regression,operational
+Region_East,0.21939021686255084,Linear Regression,operational
+month_sin,0.2146504248406283,Linear Regression,operational
+lag_1_sales,0.2140080745140196,Linear Regression,operational
+inventory_to_ma7,0.2037354913004823,Linear Regression,operational
+Product ID_P0002,0.18862329902600566,Linear Regression,operational
+day_sin,0.16035410229732971,Linear Regression,operational
+Product ID_P0019,0.1558308725022295,Linear Regression,operational
+lag_7_sales,0.1331970541241927,Linear Regression,operational
+Weather Condition_Cloudy,0.12868661458073122,Linear Regression,operational
+Region_West,0.12248132435837791,Linear Regression,operational
+Category_Toys,0.11892221455302265,Linear Regression,operational
+Category_Groceries,0.10418089541612824,Linear Regression,operational
+lag_30_sales,0.0809473610954341,Linear Regression,operational
+Category_Furniture,0.06246985674049424,Linear Regression,operational
+dow_cos,0.05690826205519439,Linear Regression,operational
+Seasonality_Summer,0.02599491818777161,Linear Regression,operational
+Product ID_P0012,0.024586049945298005,Linear Regression,operational
+Product ID_P0001,0.02389989316960639,Linear Regression,operational
+Inventory Level,64.28326986271264,Ridge,operational
+Price,4.833210028834388,Ridge,operational
+day_cos,4.293433656463908,Ridge,operational
+month_cos,3.9899407511602925,Ridge,operational
+price_discount,3.074715403436769,Ridge,operational
+month,2.6150943277949974,Ridge,operational
+Competitor Pricing,2.5603044488029174,Ridge,operational
+Product ID_P0005,2.5223862863030764,Ridge,operational
+Product ID_P0017,2.2768147580350915,Ridge,operational
+Product ID_P0008,1.8682412349767343,Ridge,operational
+weekofyear,1.7051470182706028,Ridge,operational
+Product ID_P0003,1.5853913508234148,Ridge,operational
+Weather Condition_Rainy,1.1903387351284986,Ridge,operational
+Product ID_P0007,1.0885259719861133,Ridge,operational
+Product ID_P0010,1.0360430525529543,Ridge,operational
+Product ID_P0015,1.0123610560263885,Ridge,operational
+Weather Condition_Sunny,0.9259523179799342,Ridge,operational
+Store ID_S001,0.9227078628950288,Ridge,operational
+Product ID_P0016,0.9157724954941105,Ridge,operational
+Seasonality_Spring,0.7864543327185314,Ridge,operational
+Product ID_P0011,0.7452423553942401,Ridge,operational
+Product ID_P0018,0.6765264916693627,Ridge,operational
+dow_sin,0.6629694486572676,Ridge,operational
+Product ID_P0006,0.639942986407364,Ridge,operational
+ma_30_sales,0.638805619642856,Ridge,operational
+Product ID_P0020,0.6380528225230064,Ridge,operational
+Product ID_P0004,0.6275716942888959,Ridge,operational
+Category_Electronics,0.6079543984659281,Ridge,operational
+Product ID_P0013,0.5998284222535593,Ridge,operational
+Seasonality_Winter,0.4639233832046773,Ridge,operational
+Store ID_S005,0.46013825705346323,Ridge,operational
+price_to_competitor,0.45794411395248,Ridge,operational
+std_7_sales,0.4507522301751514,Ridge,operational
+promo_discount,0.44487190551125655,Ridge,operational
+ma_7_sales,0.4362741655910563,Ridge,operational
+Product ID_P0014,0.42212710041101387,Ridge,operational
+discount_rate,0.4002481890569637,Ridge,operational
+Discount,0.4002481890229928,Ridge,operational
+Weather Condition_Snowy,0.39307618498317204,Ridge,operational
+Holiday/Promotion,0.3765233923313127,Ridge,operational
+Store ID_S004,0.37129604401099786,Ridge,operational
+Seasonality_Autumn,0.3485401201277156,Ridge,operational
+Region_North,0.342377240909455,Ridge,operational
+Store ID_S003,0.3262403454839625,Ridge,operational
+Category_Clothing,0.32244451576388594,Ridge,operational
+day_of_week,0.2927485512484616,Ridge,operational
+Product ID_P0009,0.24597446003878598,Ridge,operational
+Region_South,0.2454880150774408,Ridge,operational
+Store ID_S002,0.23496678366125182,Ridge,operational
+Region_East,0.2193953905100661,Ridge,operational
+lag_1_sales,0.213994779364469,Ridge,operational
+month_sin,0.2134424436918983,Ridge,operational
+inventory_to_ma7,0.20608738845161217,Ridge,operational
+Product ID_P0002,0.1886738398217182,Ridge,operational
+day_sin,0.1608361520519591,Ridge,operational
+Product ID_P0019,0.15573780009342617,Ridge,operational
+lag_7_sales,0.13318835365043788,Ridge,operational
+Weather Condition_Cloudy,0.12868976775601537,Ridge,operational
+Region_West,0.12250616465256262,Ridge,operational
+Category_Toys,0.11888379637554986,Ridge,operational
+Category_Groceries,0.10415062304484869,Ridge,operational
+lag_30_sales,0.08092637994715064,Ridge,operational
+Category_Furniture,0.06247546334538044,Ridge,operational
+dow_cos,0.05690315662255841,Ridge,operational
+Seasonality_Summer,0.02600917039809922,Ridge,operational
+Product ID_P0012,0.024507724732707795,Ridge,operational
+Product ID_P0001,0.023906817126304172,Ridge,operational
+Inventory Level,0.7639630055344688,Random Forest,operational
+ma_30_sales,0.01702528353172855,Random Forest,operational
+price_to_competitor,0.016946510381956794,Random Forest,operational
+lag_1_sales,0.016599910192125443,Random Forest,operational
+lag_7_sales,0.01651521765577772,Random Forest,operational
+std_7_sales,0.015666305526477808,Random Forest,operational
+lag_30_sales,0.015220099685845642,Random Forest,operational
+price_discount,0.014421022266155109,Random Forest,operational
+day_cos,0.012462427431531609,Random Forest,operational
+day_sin,0.011947349192586406,Random Forest,operational
+inventory_to_ma7,0.01127490936628392,Random Forest,operational
+Competitor Pricing,0.010966666913288015,Random Forest,operational
+ma_7_sales,0.010928006171726122,Random Forest,operational
+Price,0.010011806802476124,Random Forest,operational
+weekofyear,0.0050908117676650615,Random Forest,operational
+dow_sin,0.00405375179469843,Random Forest,operational
+day_of_week,0.0034090788443371695,Random Forest,operational
+promo_discount,0.002717511707899186,Random Forest,operational
+dow_cos,0.0024802155762541846,Random Forest,operational
+Discount,0.0019639802445147432,Random Forest,operational
+discount_rate,0.0018814477498695205,Random Forest,operational
+month_cos,0.0015087812372474065,Random Forest,operational
+Region_East,0.0013527854538454309,Random Forest,operational
+Weather Condition_Cloudy,0.0013483683537459535,Random Forest,operational
+Holiday/Promotion,0.0012961092464167095,Random Forest,operational
+month_sin,0.0012515714468785083,Random Forest,operational
+Weather Condition_Snowy,0.0012384162700350883,Random Forest,operational
+month,0.0012048093201660621,Random Forest,operational
+Weather Condition_Rainy,0.001128930098245748,Random Forest,operational
+Seasonality_Spring,0.0010851947849594484,Random Forest,operational
+Seasonality_Autumn,0.0010718957002058063,Random Forest,operational
+Region_North,0.0010689936369742432,Random Forest,operational
+Store ID_S005,0.001045298377261864,Random Forest,operational
+Category_Electronics,0.0010327367780376552,Random Forest,operational
+Seasonality_Summer,0.0010267167169301862,Random Forest,operational
+Region_South,0.0010144989621319088,Random Forest,operational
+Store ID_S004,0.0010129567028066815,Random Forest,operational
+Category_Furniture,0.0009788783552367327,Random Forest,operational
+Weather Condition_Sunny,0.0009756572300981199,Random Forest,operational
+Seasonality_Winter,0.0009652042157611968,Random Forest,operational
+Store ID_S001,0.0009608683799272946,Random Forest,operational
+Store ID_S002,0.0009552344739621431,Random Forest,operational
+Category_Groceries,0.0009104505849487522,Random Forest,operational
+Region_West,0.0009031540144083886,Random Forest,operational
+Category_Toys,0.000852171250882826,Random Forest,operational
+Store ID_S003,0.0008282123307719751,Random Forest,operational
+Category_Clothing,0.0008271372589977137,Random Forest,operational
+Product ID_P0011,0.0004965709180989812,Random Forest,operational
+Product ID_P0007,0.0004898683914474527,Random Forest,operational
+Product ID_P0010,0.000419437155195055,Random Forest,operational
+Product ID_P0009,0.0003926471000107141,Random Forest,operational
+Product ID_P0013,0.0003820617998594477,Random Forest,operational
+Product ID_P0012,0.000380405329557462,Random Forest,operational
+Product ID_P0019,0.0003755416498657625,Random Forest,operational
+Product ID_P0004,0.0003692136971852731,Random Forest,operational
+Product ID_P0002,0.00032960128719189137,Random Forest,operational
+Product ID_P0008,0.00032164698417220616,Random Forest,operational
+Product ID_P0020,0.00029978803904571544,Random Forest,operational
+Product ID_P0018,0.0002970134277507736,Random Forest,operational
+Product ID_P0015,0.00028575020001694813,Random Forest,operational
+Product ID_P0001,0.0002848062376158939,Random Forest,operational
+Product ID_P0003,0.00028264349688172843,Random Forest,operational
+Product ID_P0005,0.00027868003705585167,Random Forest,operational
+Product ID_P0014,0.0002731244021819219,Random Forest,operational
+Product ID_P0016,0.00022788114761192307,Random Forest,operational
+Product ID_P0017,0.00022608993341179318,Random Forest,operational
+Product ID_P0006,0.0001968792472932694,Random Forest,operational
+Inventory Level,0.12884722650051117,XGBoost,operational
+inventory_to_ma7,0.05031507462263107,XGBoost,operational
+ma_7_sales,0.02183367870748043,XGBoost,operational
+Product ID_P0007,0.015680618584156036,XGBoost,operational
+Product ID_P0011,0.01549000758677721,XGBoost,operational
+Product ID_P0015,0.01454444695264101,XGBoost,operational
+promo_discount,0.01448197290301323,XGBoost,operational
+month_sin,0.014406189322471619,XGBoost,operational
+Product ID_P0014,0.014358555898070335,XGBoost,operational
+price_discount,0.014314823783934116,XGBoost,operational
+ma_30_sales,0.014235763810575008,XGBoost,operational
+Category_Furniture,0.013942927122116089,XGBoost,operational
+Product ID_P0019,0.01388689037412405,XGBoost,operational
+Region_North,0.01386118121445179,XGBoost,operational
+month_cos,0.01385513599961996,XGBoost,operational
+Product ID_P0003,0.013759948313236237,XGBoost,operational
+Product ID_P0012,0.013628433458507061,XGBoost,operational
+Product ID_P0002,0.013530135154724121,XGBoost,operational
+lag_1_sales,0.013517347164452076,XGBoost,operational
+Region_East,0.013396350666880608,XGBoost,operational
+std_7_sales,0.013302115723490715,XGBoost,operational
+Product ID_P0013,0.013239427469670773,XGBoost,operational
+Seasonality_Autumn,0.013210744597017765,XGBoost,operational
+Store ID_S001,0.01318406406790018,XGBoost,operational
+Product ID_P0010,0.01313609629869461,XGBoost,operational
+price_to_competitor,0.013115527108311653,XGBoost,operational
+Product ID_P0004,0.013026745989918709,XGBoost,operational
+Category_Electronics,0.012994896620512009,XGBoost,operational
+lag_7_sales,0.012974005192518234,XGBoost,operational
+Product ID_P0001,0.012934721074998379,XGBoost,operational
+Weather Condition_Rainy,0.012918833643198013,XGBoost,operational
+Store ID_S005,0.012901290319859982,XGBoost,operational
+Product ID_P0008,0.01283325720578432,XGBoost,operational
+Category_Groceries,0.01282897125929594,XGBoost,operational
+Weather Condition_Cloudy,0.012819095514714718,XGBoost,operational
+dow_sin,0.012811684980988503,XGBoost,operational
+Product ID_P0020,0.012756059877574444,XGBoost,operational
+Weather Condition_Snowy,0.012731681577861309,XGBoost,operational
+Product ID_P0009,0.01272597722709179,XGBoost,operational
+day_cos,0.012724032625555992,XGBoost,operational
+Seasonality_Winter,0.012589124962687492,XGBoost,operational
+day_sin,0.012497595511376858,XGBoost,operational
+Competitor Pricing,0.012338983826339245,XGBoost,operational
+lag_30_sales,0.012286202050745487,XGBoost,operational
+weekofyear,0.012224065139889717,XGBoost,operational
+Product ID_P0016,0.012214754708111286,XGBoost,operational
+Region_West,0.011873184703290462,XGBoost,operational
+dow_cos,0.011844353750348091,XGBoost,operational
+Category_Clothing,0.011761174537241459,XGBoost,operational
+Store ID_S002,0.011759269051253796,XGBoost,operational
+Store ID_S003,0.011750300414860249,XGBoost,operational
+discount_rate,0.011725555174052715,XGBoost,operational
+Holiday/Promotion,0.011648994870483875,XGBoost,operational
+Category_Toys,0.011514182202517986,XGBoost,operational
+Product ID_P0005,0.011140490882098675,XGBoost,operational
+Store ID_S004,0.011059376411139965,XGBoost,operational
+Seasonality_Summer,0.010994940996170044,XGBoost,operational
+Weather Condition_Sunny,0.01099330373108387,XGBoost,operational
+day_of_week,0.010582231916487217,XGBoost,operational
+Region_South,0.01056902389973402,XGBoost,operational
+Seasonality_Spring,0.010534802451729774,XGBoost,operational
+Product ID_P0018,0.009964941069483757,XGBoost,operational
+Product ID_P0006,0.009850680828094482,XGBoost,operational
+Price,0.009775448590517044,XGBoost,operational
+month,0.009217648766934872,XGBoost,operational
+Discount,0.009177167899906635,XGBoost,operational
+Product ID_P0017,0.007056275848299265,XGBoost,operational
+Demand Forecast,108.40911759515205,Linear Regression,vendor
+Inventory Level,0.5305590483876003,Linear Regression,vendor
+month_cos,0.4270195086963904,Linear Regression,vendor
+Price,0.39769481472896473,Linear Regression,vendor
+Competitor Pricing,0.396514529652805,Linear Regression,vendor
+day_cos,0.3846357764795636,Linear Regression,vendor
+Product ID_P0010,0.24262709730886212,Linear Regression,vendor
+Product ID_P0019,0.23108635424337318,Linear Regression,vendor
+Product ID_P0013,0.21452306718493094,Linear Regression,vendor
+Product ID_P0018,0.20871788843751443,Linear Regression,vendor
+Product ID_P0020,0.1708345490407767,Linear Regression,vendor
+day_sin,0.156526592314993,Linear Regression,vendor
+Product ID_P0016,0.12273238771477522,Linear Regression,vendor
+Category_Groceries,0.12050232627336363,Linear Regression,vendor
+Store ID_S005,0.11570553453307254,Linear Regression,vendor
+month_sin,0.1099505812323649,Linear Regression,vendor
+Region_East,0.10595797023226147,Linear Regression,vendor
+Product ID_P0003,0.1054193257823462,Linear Regression,vendor
+Product ID_P0007,0.09981822458446449,Linear Regression,vendor
+month,0.09528390375841411,Linear Regression,vendor
+inventory_to_ma7,0.0793278751661583,Linear Regression,vendor
+Product ID_P0017,0.07767770332526297,Linear Regression,vendor
+Store ID_S001,0.07720853148541386,Linear Regression,vendor
+Product ID_P0015,0.07716453924384754,Linear Regression,vendor
+std_7_sales,0.0765094034306264,Linear Regression,vendor
+Product ID_P0009,0.07279445635181007,Linear Regression,vendor
+Product ID_P0005,0.07073993419963151,Linear Regression,vendor
+price_to_competitor,0.06861202490701346,Linear Regression,vendor
+ma_30_sales,0.06045598388674356,Linear Regression,vendor
+Product ID_P0001,0.059689689248414,Linear Regression,vendor
+Product ID_P0014,0.05950003990021156,Linear Regression,vendor
+Category_Furniture,0.058184672284097155,Linear Regression,vendor
+Product ID_P0008,0.055360403845011785,Linear Regression,vendor
+day_of_week,0.0546151656526046,Linear Regression,vendor
+weekofyear,0.05041867030655567,Linear Regression,vendor
+price_discount,0.048820523171358765,Linear Regression,vendor
+Category_Toys,0.04750212376066308,Linear Regression,vendor
+Store ID_S003,0.04482796335115097,Linear Regression,vendor
+Product ID_P0012,0.04412088362057883,Linear Regression,vendor
+lag_7_sales,0.04199084407702536,Linear Regression,vendor
+dow_sin,0.0417677870761759,Linear Regression,vendor
+Product ID_P0006,0.03987226650503474,Linear Regression,vendor
+Seasonality_Summer,0.03969856951104993,Linear Regression,vendor
+Region_West,0.03947847037879468,Linear Regression,vendor
+Seasonality_Autumn,0.037460975390867984,Linear Regression,vendor
+Region_South,0.03376944117619604,Linear Regression,vendor
+Region_North,0.03271005867727064,Linear Regression,vendor
+Holiday/Promotion,0.030798425550238373,Linear Regression,vendor
+Product ID_P0004,0.027687390170777038,Linear Regression,vendor
+Product ID_P0002,0.027663149179283607,Linear Regression,vendor
+Seasonality_Spring,0.027399262811630107,Linear Regression,vendor
+lag_1_sales,0.027060433041510734,Linear Regression,vendor
+Seasonality_Winter,0.025161668691480815,Linear Regression,vendor
+Weather Condition_Snowy,0.02355581402809901,Linear Regression,vendor
+Discount,0.0232553214204545,Linear Regression,vendor
+discount_rate,0.02325532142043274,Linear Regression,vendor
+Product ID_P0011,0.019873632553455006,Linear Regression,vendor
+Weather Condition_Cloudy,0.019053526023090128,Linear Regression,vendor
+promo_discount,0.01666291798163544,Linear Regression,vendor
+Category_Clothing,0.016352425069832352,Linear Regression,vendor
+dow_cos,0.014438531645126318,Linear Regression,vendor
+Weather Condition_Sunny,0.013636033161501915,Linear Regression,vendor
+ma_7_sales,0.01250330495402796,Linear Regression,vendor
+Weather Condition_Rainy,0.009133745156506001,Linear Regression,vendor
+Store ID_S004,0.007723056952034596,Linear Regression,vendor
+Category_Electronics,0.0015368948412189942,Linear Regression,vendor
+Store ID_S002,0.001392096648547947,Linear Regression,vendor
+lag_30_sales,0.0005474337658699646,Linear Regression,vendor
+Demand Forecast,108.40628143557228,Ridge,vendor
+Inventory Level,0.5322072194043052,Ridge,vendor
+month_cos,0.42626813791845425,Ridge,vendor
+Price,0.39417586181892544,Ridge,vendor
+Competitor Pricing,0.39384008868371606,Ridge,vendor
+day_cos,0.3839098324432785,Ridge,vendor
+Product ID_P0010,0.24250124815263632,Ridge,vendor
+Product ID_P0019,0.23100297229502179,Ridge,vendor
+Product ID_P0013,0.21442528053883886,Ridge,vendor
+Product ID_P0018,0.2086556864090471,Ridge,vendor
+Product ID_P0020,0.17079087692961475,Ridge,vendor
+day_sin,0.15629137757846093,Ridge,vendor
+Product ID_P0016,0.12271109977700825,Ridge,vendor
+Category_Groceries,0.12048995466843093,Ridge,vendor
+Store ID_S005,0.11568484109426952,Ridge,vendor
+month_sin,0.10987352015885546,Ridge,vendor
+Region_East,0.10595699898002163,Ridge,vendor
+Product ID_P0003,0.10542065581381063,Ridge,vendor
+Product ID_P0007,0.09981037006495187,Ridge,vendor
+month,0.09517152856699108,Ridge,vendor
+inventory_to_ma7,0.07934771061536862,Ridge,vendor
+Product ID_P0017,0.07771244283446072,Ridge,vendor
+Store ID_S001,0.07718017528978471,Ridge,vendor
+Product ID_P0015,0.07710810960475714,Ridge,vendor
+std_7_sales,0.07652034165064163,Ridge,vendor
+Product ID_P0009,0.0727691365983517,Ridge,vendor
+Product ID_P0005,0.07064441144759237,Ridge,vendor
+price_to_competitor,0.06838865321542578,Ridge,vendor
+ma_30_sales,0.060436000023194054,Ridge,vendor
+Product ID_P0001,0.059665611645189166,Ridge,vendor
+Product ID_P0014,0.05948527935319438,Ridge,vendor
+Category_Furniture,0.05817715964402753,Ridge,vendor
+Product ID_P0008,0.05539128168381554,Ridge,vendor
+day_of_week,0.0546206232800245,Ridge,vendor
+weekofyear,0.05033201932689234,Ridge,vendor
+price_discount,0.049691603863968606,Ridge,vendor
+Category_Toys,0.04749271313673199,Ridge,vendor
+Store ID_S003,0.04483441914938325,Ridge,vendor
+Product ID_P0012,0.04410547502315099,Ridge,vendor
+lag_7_sales,0.041991986976118306,Ridge,vendor
+dow_sin,0.041783717882723725,Ridge,vendor
+Product ID_P0006,0.0398389275396559,Ridge,vendor
+Seasonality_Summer,0.039693795271318,Ridge,vendor
+Region_West,0.03948048065689802,Ridge,vendor
+Seasonality_Autumn,0.03746437020907827,Ridge,vendor
+Region_South,0.03376131569881803,Ridge,vendor
+Region_North,0.03271520260410373,Ridge,vendor
+Holiday/Promotion,0.030787487045212836,Ridge,vendor
+Product ID_P0004,0.02765977792508689,Ridge,vendor
+Product ID_P0002,0.027647402474590924,Ridge,vendor
+Seasonality_Spring,0.027376172689813506,Ridge,vendor
+lag_1_sales,0.027053758932039457,Ridge,vendor
+Seasonality_Winter,0.025146747628064476,Ridge,vendor
+Weather Condition_Snowy,0.023544875798883143,Ridge,vendor
+Discount,0.023321597757776865,Ridge,vendor
+discount_rate,0.023321597716448778,Ridge,vendor
+Product ID_P0011,0.019883675079465743,Ridge,vendor
+Weather Condition_Cloudy,0.019047456289555932,Ridge,vendor
+promo_discount,0.01664775066916298,Ridge,vendor
+Category_Clothing,0.016343654680338854,Ridge,vendor
+dow_cos,0.014435026979384421,Ridge,vendor
+Weather Condition_Sunny,0.013660882024210511,Ridge,vendor
+ma_7_sales,0.012499399866020966,Ridge,vendor
+Weather Condition_Rainy,0.009163462440741472,Ridge,vendor
+Store ID_S004,0.007713936045432401,Ridge,vendor
+Category_Electronics,0.0015235728422957613,Ridge,vendor
+Store ID_S002,0.0013841827080696525,Ridge,vendor
+lag_30_sales,0.0005487799462212487,Ridge,vendor
+Demand Forecast,0.9983736787757802,Random Forest,vendor
+Inventory Level,0.00028673508301423935,Random Forest,vendor
+lag_30_sales,9.563031971121035e-05,Random Forest,vendor
+ma_30_sales,9.445646312715841e-05,Random Forest,vendor
+price_to_competitor,9.429046576383671e-05,Random Forest,vendor
+lag_7_sales,9.257482391291726e-05,Random Forest,vendor
+lag_1_sales,8.980018124294763e-05,Random Forest,vendor
+std_7_sales,8.972004782612701e-05,Random Forest,vendor
+inventory_to_ma7,7.735031200372324e-05,Random Forest,vendor
+ma_7_sales,7.421934086923986e-05,Random Forest,vendor
+day_sin,6.915704816337601e-05,Random Forest,vendor
+day_cos,6.898171724366726e-05,Random Forest,vendor
+price_discount,5.817914635236255e-05,Random Forest,vendor
+Competitor Pricing,5.022816716218033e-05,Random Forest,vendor
+Price,4.5471767754242796e-05,Random Forest,vendor
+weekofyear,3.37731443148214e-05,Random Forest,vendor
+dow_sin,2.3349006391548264e-05,Random Forest,vendor
+day_of_week,2.044269457034548e-05,Random Forest,vendor
+promo_discount,1.750302172324987e-05,Random Forest,vendor
+dow_cos,1.622887832798845e-05,Random Forest,vendor
+discount_rate,1.178183009246364e-05,Random Forest,vendor
+Discount,1.1593631777808712e-05,Random Forest,vendor
+month_cos,1.0688892771415924e-05,Random Forest,vendor
+month_sin,9.416534677886988e-06,Random Forest,vendor
+Holiday/Promotion,8.680671341555054e-06,Random Forest,vendor
+Region_East,7.995767974354088e-06,Random Forest,vendor
+month,7.708312997306983e-06,Random Forest,vendor
+Seasonality_Summer,7.30599036205084e-06,Random Forest,vendor
+Weather Condition_Cloudy,7.236437459275699e-06,Random Forest,vendor
+Weather Condition_Sunny,6.946722263073403e-06,Random Forest,vendor
+Weather Condition_Snowy,6.742066549022533e-06,Random Forest,vendor
+Region_North,6.71849893602057e-06,Random Forest,vendor
+Seasonality_Spring,6.6398867784801735e-06,Random Forest,vendor
+Weather Condition_Rainy,6.538593896768018e-06,Random Forest,vendor
+Seasonality_Autumn,6.318728716910405e-06,Random Forest,vendor
+Category_Groceries,6.309629423888098e-06,Random Forest,vendor
+Seasonality_Winter,6.29190592353491e-06,Random Forest,vendor
+Store ID_S004,6.15238936641696e-06,Random Forest,vendor
+Category_Furniture,6.008616000322774e-06,Random Forest,vendor
+Region_South,5.984006331691544e-06,Random Forest,vendor
+Region_West,5.9199262067811755e-06,Random Forest,vendor
+Store ID_S002,5.832053789988649e-06,Random Forest,vendor
+Store ID_S003,5.8160777413093175e-06,Random Forest,vendor
+Store ID_S001,5.437328680401462e-06,Random Forest,vendor
+Category_Electronics,5.397673308439175e-06,Random Forest,vendor
+Store ID_S005,5.376238804586066e-06,Random Forest,vendor
+Category_Clothing,5.163598347030822e-06,Random Forest,vendor
+Category_Toys,4.85305369695598e-06,Random Forest,vendor
+Product ID_P0005,2.8110875259078563e-06,Random Forest,vendor
+Product ID_P0017,2.226410874436869e-06,Random Forest,vendor
+Product ID_P0009,1.98750637111124e-06,Random Forest,vendor
+Product ID_P0003,1.817342397306363e-06,Random Forest,vendor
+Product ID_P0001,1.7546308166443167e-06,Random Forest,vendor
+Product ID_P0019,1.6794361841458435e-06,Random Forest,vendor
+Product ID_P0002,1.6779677035625435e-06,Random Forest,vendor
+Product ID_P0018,1.6450793430882946e-06,Random Forest,vendor
+Product ID_P0016,1.5490789645860795e-06,Random Forest,vendor
+Product ID_P0020,1.4816684279583361e-06,Random Forest,vendor
+Product ID_P0004,1.479403593151388e-06,Random Forest,vendor
+Product ID_P0015,1.4271813062494686e-06,Random Forest,vendor
+Product ID_P0007,1.4270810902476274e-06,Random Forest,vendor
+Product ID_P0010,1.3859076433625894e-06,Random Forest,vendor
+Product ID_P0012,1.2897549654392951e-06,Random Forest,vendor
+Product ID_P0013,1.28908862405011e-06,Random Forest,vendor
+Product ID_P0008,1.267147468505362e-06,Random Forest,vendor
+Product ID_P0011,1.2161273614290264e-06,Random Forest,vendor
+Product ID_P0006,1.108919991427551e-06,Random Forest,vendor
+Product ID_P0014,8.537098761544203e-07,Random Forest,vendor
+Demand Forecast,0.8876433968544006,XGBoost,vendor
+Inventory Level,0.06027540937066078,XGBoost,vendor
+inventory_to_ma7,0.019023379310965538,XGBoost,vendor
+ma_7_sales,0.004167296923696995,XGBoost,vendor
+Product ID_P0007,0.002273052930831909,XGBoost,vendor
+Seasonality_Autumn,0.001998967258259654,XGBoost,vendor
+Product ID_P0011,0.0019245613366365433,XGBoost,vendor
+Product ID_P0004,0.0009189625852741301,XGBoost,vendor
+Product ID_P0001,0.0007976044435054064,XGBoost,vendor
+Category_Groceries,0.0007290974026545882,XGBoost,vendor
+price_discount,0.0006863877060823143,XGBoost,vendor
+Product ID_P0015,0.0006143352948129177,XGBoost,vendor
+Product ID_P0009,0.0006066870409995317,XGBoost,vendor
+day_cos,0.0005564627354033291,XGBoost,vendor
+ma_30_sales,0.0005419514491222799,XGBoost,vendor
+std_7_sales,0.0005190513911657035,XGBoost,vendor
+lag_7_sales,0.0005137503612786531,XGBoost,vendor
+lag_30_sales,0.00048737338511273265,XGBoost,vendor
+Category_Toys,0.00047723963507451117,XGBoost,vendor
+day_sin,0.0004570728342514485,XGBoost,vendor
+Competitor Pricing,0.00045573589159175754,XGBoost,vendor
+month,0.00043247549911029637,XGBoost,vendor
+lag_1_sales,0.00043110098340548575,XGBoost,vendor
+discount_rate,0.0004171073960606009,XGBoost,vendor
+Category_Clothing,0.00041474905447103083,XGBoost,vendor
+Store ID_S004,0.0004134620539844036,XGBoost,vendor
+weekofyear,0.00041070484439842403,XGBoost,vendor
+Product ID_P0006,0.0004031310381833464,XGBoost,vendor
+Category_Furniture,0.00040179607458412647,XGBoost,vendor
+price_to_competitor,0.0004001721099484712,XGBoost,vendor
+Seasonality_Spring,0.0003806382301263511,XGBoost,vendor
+Region_North,0.0003797273675445467,XGBoost,vendor
+Store ID_S001,0.0003761000116355717,XGBoost,vendor
+Price,0.00037436370621435344,XGBoost,vendor
+Seasonality_Winter,0.00037283936399035156,XGBoost,vendor
+Weather Condition_Rainy,0.000369038840290159,XGBoost,vendor
+Product ID_P0018,0.0003520197933539748,XGBoost,vendor
+month_sin,0.0003476057609077543,XGBoost,vendor
+Discount,0.000327073794323951,XGBoost,vendor
+Product ID_P0020,0.00032646593172103167,XGBoost,vendor
+Product ID_P0010,0.0003069447120651603,XGBoost,vendor
+Store ID_S005,0.00030239037005230784,XGBoost,vendor
+Region_South,0.00030131888343021274,XGBoost,vendor
+Weather Condition_Snowy,0.0003009348874911666,XGBoost,vendor
+Category_Electronics,0.0003001187869813293,XGBoost,vendor
+Product ID_P0014,0.00029712964897044003,XGBoost,vendor
+promo_discount,0.0002962448925245553,XGBoost,vendor
+dow_sin,0.0002923198917414993,XGBoost,vendor
+Product ID_P0017,0.00029082607943564653,XGBoost,vendor
+Region_East,0.0002829543373081833,XGBoost,vendor
+Holiday/Promotion,0.00026452791644260287,XGBoost,vendor
+Weather Condition_Cloudy,0.0002613176766317338,XGBoost,vendor
+dow_cos,0.00026122096460312605,XGBoost,vendor
+day_of_week,0.00024434475926682353,XGBoost,vendor
+Product ID_P0002,0.00024345549172721803,XGBoost,vendor
+Product ID_P0019,0.00023277703439816833,XGBoost,vendor
+Region_West,0.00023032978060655296,XGBoost,vendor
+Weather Condition_Sunny,0.00022811385861132294,XGBoost,vendor
+Product ID_P0012,0.0002270037803100422,XGBoost,vendor
+Product ID_P0003,0.0002258685854030773,XGBoost,vendor
+Seasonality_Summer,0.0002156661357730627,XGBoost,vendor
+Store ID_S002,0.0002135944232577458,XGBoost,vendor
+Product ID_P0016,0.00021319728693924844,XGBoost,vendor
+Product ID_P0005,0.00021069933427497745,XGBoost,vendor
+Product ID_P0008,0.00020678344299085438,XGBoost,vendor
+Store ID_S003,0.00019961001817137003,XGBoost,vendor
+month_cos,0.00018607015954330564,XGBoost,vendor
+Product ID_P0013,0.00016575457993894815,XGBoost,vendor

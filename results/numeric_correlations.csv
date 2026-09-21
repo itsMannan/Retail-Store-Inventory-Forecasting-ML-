@@ -1,0 +1,9 @@
+feature,Units Sold,Inventory Level,Units Ordered,Demand Forecast,Price,Discount,Competitor Pricing,Holiday/Promotion
+Units Sold,1.0,0.59,-0.001,0.997,0.001,0.003,0.001,-0.0
+Inventory Level,0.59,1.0,0.001,0.589,0.009,0.005,0.009,0.003
+Units Ordered,-0.001,0.001,1.0,-0.001,0.004,-0.001,0.005,0.005
+Demand Forecast,0.997,0.589,-0.001,1.0,0.001,0.002,0.001,-0.001
+Price,0.001,0.009,0.004,0.001,1.0,0.002,0.994,0.002
+Discount,0.003,0.005,-0.001,0.002,0.002,1.0,0.002,-0.001
+Competitor Pricing,0.001,0.009,0.005,0.001,0.994,0.002,1.0,0.002
+Holiday/Promotion,-0.0,0.003,0.005,-0.001,0.002,-0.001,0.002,1.0

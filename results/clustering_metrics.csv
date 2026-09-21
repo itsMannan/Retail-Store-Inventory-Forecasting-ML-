@@ -1,0 +1,5 @@
+key,value
+n_clusters,3.0
+silhouette,0.2268
+davies_bouldin,1.4552
+inertia,330.7446
