@@ -175,18 +175,21 @@ def plot_confusion(y_true, y_pred, title: str, name: str) -> Path:
 
 
 def plot_inventory_costs(policy_df: pd.DataFrame) -> Path:
-    melted = policy_df.melt(
+    focus = policy_df[policy_df["policy"].str.contains("current|recommended", regex=True)].copy()
+    if focus.empty:
+        focus = policy_df
+    melted = focus.melt(
         id_vars=["policy"],
         value_vars=["holding_cost", "stockout_cost"],
         var_name="cost_type",
         value_name="cost",
     )
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(8, 5))
     sns.barplot(data=melted, x="policy", y="cost", hue="cost_type", ax=ax)
-    ax.set_title("Inventory cost by policy (test period)")
+    ax.set_title("Inventory cost: current on-hand vs recommended policy")
     ax.set_xlabel("")
     ax.set_ylabel("Cost ($)")
-    ax.tick_params(axis="x", rotation=15)
+    ax.tick_params(axis="x", rotation=10)
     return _save(fig, "inventory_cost_comparison.png")
 
 

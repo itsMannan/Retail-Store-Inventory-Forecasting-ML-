@@ -101,7 +101,9 @@ def _classification_catalog() -> dict:
     }
 
 
-def _feature_importance(name: str, estimator, feature_names: list[str]) -> pd.DataFrame | None:
+def _feature_importance(
+    name: str, feature_set: str, estimator, feature_names: list[str]
+) -> pd.DataFrame | None:
     if hasattr(estimator, "feature_importances_"):
         values = estimator.feature_importances_
     elif hasattr(estimator, "coef_"):
@@ -112,7 +114,14 @@ def _feature_importance(name: str, estimator, feature_names: list[str]) -> pd.Da
     if len(values) != len(feature_names):
         return None
     return (
-        pd.DataFrame({"feature": feature_names, "importance": values, "model": name})
+        pd.DataFrame(
+            {
+                "feature": feature_names,
+                "importance": values,
+                "model": name,
+                "feature_set": feature_set,
+            }
+        )
         .sort_values("importance", ascending=False)
         .reset_index(drop=True)
     )
@@ -141,7 +150,9 @@ def train_regressors(
                 scale=scale,
                 predictions=preds,
                 metrics={"model": name, "feature_set": feature_set, **regression_report(y_test, preds)},
-                importances=_feature_importance(name, estimator, list(X_train.columns)),
+                importances=_feature_importance(
+                    name, feature_set, estimator, list(X_train.columns)
+                ),
             )
         )
     return trained
@@ -191,7 +202,9 @@ def train_classifiers(
                     "feature_set": feature_set,
                     **classification_report_dict(y_test, preds, proba, labels=labels),
                 },
-                importances=_feature_importance(name, estimator, list(X_train.columns)),
+                importances=_feature_importance(
+                    name, feature_set, estimator, list(X_train.columns)
+                ),
             )
         )
     return trained

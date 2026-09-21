@@ -13,6 +13,7 @@ from sklearn.metrics import (
     r2_score,
     roc_auc_score,
 )
+from sklearn.preprocessing import label_binarize
 
 
 def _as_float(y) -> np.ndarray:
@@ -99,12 +100,13 @@ def classification_report_dict(y_true, y_pred, y_proba=None, labels=None) -> dic
         report[f"f1_{label}"] = round(float(f), 4)
     if y_proba is not None:
         try:
+            y_bin = label_binarize(list(y_true), classes=labels)
             report["roc_auc_ovr"] = round(
-                float(roc_auc_score(y_true, y_proba, multi_class="ovr", labels=labels)),
+                float(roc_auc_score(y_bin, y_proba, average="macro")),
                 4,
             )
         except ValueError:
-            report["roc_auc_ovr"] = float("nan")
+            report["roc_auc_ovr"] = None
     return report
 
 

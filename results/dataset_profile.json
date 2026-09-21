@@ -1,0 +1,29 @@
+{
+  "rows": 73100,
+  "columns": [
+    "Date",
+    "Store ID",
+    "Product ID",
+    "Category",
+    "Region",
+    "Inventory Level",
+    "Units Sold",
+    "Units Ordered",
+    "Demand Forecast",
+    "Price",
+    "Discount",
+    "Weather Condition",
+    "Holiday/Promotion",
+    "Competitor Pricing",
+    "Seasonality"
+  ],
+  "date_min": "2022-01-01",
+  "date_max": "2024-01-01",
+  "n_dates": 731,
+  "n_stores": 5,
+  "n_products": 20,
+  "n_store_product": 100,
+  "missing_values": {},
+  "units_sold_zero": 360,
+  "stockout_exact": 369
+}

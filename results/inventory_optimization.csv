@@ -1,0 +1,4 @@
+holding_cost,stockout_cost,total_cost,stockout_rate,lost_units,leftover_units,mean_inventory,mean_demand,fill_rate,policy,cost_reduction_vs_current_pct
+150891.54,0.0,150891.54,0.0,0.0,2031421.0,274.08,135.89,1.0,current_on_hand,0.0
+74943.16,1305537.69,1380480.85,0.501,53513.86,53267.11,135.87,135.89,0.9732,match_forecast_no_safety,-814.88
+82677.07,12220.0,94897.08,0.0338,508.83,206822.52,149.92,135.89,0.9997,recommended_z1.96,37.11

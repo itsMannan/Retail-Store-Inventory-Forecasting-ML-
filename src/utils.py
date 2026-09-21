@@ -26,8 +26,18 @@ def save_csv(df: pd.DataFrame, name: str) -> Path:
 def save_json(payload: dict, name: str) -> Path:
     ensure_output_dirs()
     path = RESULTS_DIR / name
-    path.write_text(json.dumps(payload, indent=2, default=_json_default))
+    path.write_text(json.dumps(_sanitize(payload), indent=2, default=_json_default))
     return path
+
+
+def _sanitize(obj):
+    if isinstance(obj, dict):
+        return {k: _sanitize(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_sanitize(v) for v in obj]
+    if isinstance(obj, float) and (np.isnan(obj) or np.isinf(obj)):
+        return None
+    return obj
 
 
 def _json_default(obj):

@@ -1,0 +1,174 @@
+{
+  "top_features": [
+    {
+      "feature": "Demand Forecast",
+      "importance": 0.9983736787757802
+    },
+    {
+      "feature": "Inventory Level",
+      "importance": 0.00028673508301423935
+    },
+    {
+      "feature": "lag_30_sales",
+      "importance": 9.563031971121035e-05
+    },
+    {
+      "feature": "ma_30_sales",
+      "importance": 9.445646312715841e-05
+    },
+    {
+      "feature": "price_to_competitor",
+      "importance": 9.429046576383671e-05
+    },
+    {
+      "feature": "lag_7_sales",
+      "importance": 9.257482391291726e-05
+    },
+    {
+      "feature": "lag_1_sales",
+      "importance": 8.980018124294763e-05
+    },
+    {
+      "feature": "std_7_sales",
+      "importance": 8.972004782612701e-05
+    }
+  ],
+  "mean_units_by_category": {
+    "Furniture": 137.766,
+    "Groceries": 136.916,
+    "Clothing": 136.686,
+    "Toys": 135.934,
+    "Electronics": 135.007
+  },
+  "mean_units_by_region": {
+    "South": 137.061,
+    "East": 136.861,
+    "North": 136.327,
+    "West": 135.606
+  },
+  "promotion_impact": {
+    "0": 136.505,
+    "1": 136.424
+  },
+  "weather_impact": {
+    "Cloudy": 136.758,
+    "Rainy": 135.16,
+    "Snowy": 135.912,
+    "Sunny": 138.029
+  },
+  "seasonality_label_impact": {
+    "Autumn": 137.782,
+    "Spring": 135.827,
+    "Summer": 135.428,
+    "Winter": 136.831
+  },
+  "inventory_sold_corr": 0.59,
+  "vendor_forecast_corr": 0.9969,
+  "price_competitor_corr": 0.9939,
+  "mean_inventory": 274.47,
+  "mean_units_sold": 136.46,
+  "mean_leftover": 138.01,
+  "data_quality_notes": [
+    "Category is not a stable product attribute (each Product ID appears in all 5 categories).",
+    "Region is not a stable store attribute (each Store ID appears in all 4 regions).",
+    "Seasonality labels do not line up with calendar seasons.",
+    "Units sold are always <= inventory; mean sold / mean inventory \u2248 0.5.",
+    "Vendor Demand Forecast is nearly collinear with Units Sold (corr \u2248 0.997)."
+  ],
+  "temporal_cutoff": "2023-08-08",
+  "demand_class_thresholds": {
+    "LOW_lt": 49.0,
+    "HIGH_gt": 203.0
+  },
+  "best_regression": {
+    "model": "Random Forest",
+    "feature_set": "vendor",
+    "MAPE": 22.6581,
+    "MAPE_y>=10": 10.4702,
+    "sMAPE": 14.2309,
+    "WAPE": 5.3455,
+    "MAE": 7.264,
+    "RMSE": 8.4966,
+    "R2": 0.9938,
+    "within_20pct": 82.0,
+    "n": 14700
+  },
+  "best_operational_regression": {
+    "model": "Linear Regression",
+    "feature_set": "operational",
+    "MAPE": 288.0738,
+    "MAPE_y>=10": 101.0875,
+    "sMAPE": 58.0084,
+    "WAPE": 50.4925,
+    "MAE": 68.614,
+    "RMSE": 87.6115,
+    "R2": 0.3446,
+    "within_20pct": 20.9252,
+    "n": 14700
+  },
+  "best_classifier": {
+    "model": "XGBoost",
+    "feature_set": "vendor",
+    "accuracy": 0.9473,
+    "f1_macro": 0.9474,
+    "f1_weighted": 0.9473,
+    "precision_LOW": 0.925,
+    "recall_LOW": 0.9245,
+    "f1_LOW": 0.9247,
+    "precision_MEDIUM": 0.9471,
+    "recall_MEDIUM": 0.9479,
+    "f1_MEDIUM": 0.9475,
+    "precision_HIGH": 0.9704,
+    "recall_HIGH": 0.9693,
+    "f1_HIGH": 0.9698,
+    "roc_auc_ovr": 0.9956
+  },
+  "inventory_policy": [
+    {
+      "holding_cost": 150891.54,
+      "stockout_cost": 0.0,
+      "total_cost": 150891.54,
+      "stockout_rate": 0.0,
+      "lost_units": 0.0,
+      "leftover_units": 2031421.0,
+      "mean_inventory": 274.08,
+      "mean_demand": 135.89,
+      "fill_rate": 1.0,
+      "policy": "current_on_hand",
+      "cost_reduction_vs_current_pct": 0.0
+    },
+    {
+      "holding_cost": 74943.16,
+      "stockout_cost": 1305537.69,
+      "total_cost": 1380480.85,
+      "stockout_rate": 0.501,
+      "lost_units": 53513.86,
+      "leftover_units": 53267.11,
+      "mean_inventory": 135.87,
+      "mean_demand": 135.89,
+      "fill_rate": 0.9732,
+      "policy": "match_forecast_no_safety",
+      "cost_reduction_vs_current_pct": -814.88
+    },
+    {
+      "holding_cost": 82677.07,
+      "stockout_cost": 12220.0,
+      "total_cost": 94897.08,
+      "stockout_rate": 0.0338,
+      "lost_units": 508.83,
+      "leftover_units": 206822.52,
+      "mean_inventory": 149.92,
+      "mean_demand": 135.89,
+      "fill_rate": 0.9997,
+      "policy": "recommended_z1.96",
+      "cost_reduction_vs_current_pct": 37.11
+    }
+  ],
+  "selected_z": 1.96,
+  "residual_std": 7.169250347942329,
+  "clustering": {
+    "silhouette": 0.2268,
+    "davies_bouldin": 1.4552,
+    "n_clusters": 3
+  }
+}

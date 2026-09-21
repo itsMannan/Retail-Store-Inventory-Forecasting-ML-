@@ -121,14 +121,26 @@ def run(data_path: Path | None = None) -> dict:
     importance = pd.concat(importance_frames, ignore_index=True) if importance_frames else pd.DataFrame()
     if not importance.empty:
         save_csv(importance, "feature_importance.csv")
-        best_imp = importance[importance["model"] == best_vendor.name]
-        if best_imp.empty:
-            best_imp = importance
+        vendor_imp = importance[
+            (importance["model"] == best_vendor.name) & (importance["feature_set"] == "vendor")
+        ]
+        if vendor_imp.empty:
+            vendor_imp = importance
         viz.plot_feature_importance(
-            best_imp[best_imp["model"] == best_imp["model"].iloc[0]],
-            f"Feature importance — {best_vendor.name}",
+            vendor_imp,
+            f"Feature importance — {best_vendor.name} (vendor track)",
             "feature_importance.png",
         )
+        op_imp = importance[
+            (importance["model"] == best_operational.name)
+            & (importance["feature_set"] == "operational")
+        ]
+        if not op_imp.empty:
+            viz.plot_feature_importance(
+                op_imp,
+                f"Feature importance — {best_operational.name} (operational)",
+                "feature_importance_operational.png",
+            )
 
     pred_out = split.test[["Date", "Store ID", "Product ID", "Category", "Region", TARGET, "Demand Forecast", "Inventory Level", "Price"]].copy()
     pred_out["pred_operational"] = best_operational.predictions
@@ -178,13 +190,8 @@ def run(data_path: Path | None = None) -> dict:
     vendor_imp = None
     if not importance.empty:
         vendor_imp = importance[
-            (importance["model"] == best_vendor.name)
-        ]
-        # Feature importance table is concatenated across feature sets; keep vendor-track rows
-        # by matching the length of vendor encoder names when possible.
-        vendor_imp = vendor_imp.drop_duplicates(subset=["feature"]).sort_values(
-            "importance", ascending=False
-        )
+            (importance["model"] == best_vendor.name) & (importance["feature_set"] == "vendor")
+        ].sort_values("importance", ascending=False)
     insights = business_insights(df, vendor_imp)
     insights["temporal_cutoff"] = str(split.cutoff.date())
     insights["demand_class_thresholds"] = {"LOW_lt": low_q, "HIGH_gt": high_q}
