@@ -1,11 +1,9 @@
-"""Filesystem helpers and small shared utilities."""
+"""Filesystem helpers and small shared utilities. Results are CSV only."""
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 from src.config import RESULTS_DIR, VIZ_DIR
@@ -23,33 +21,26 @@ def save_csv(df: pd.DataFrame, name: str) -> Path:
     return path
 
 
-def save_json(payload: dict, name: str) -> Path:
-    ensure_output_dirs()
-    path = RESULTS_DIR / name
-    path.write_text(json.dumps(_sanitize(payload), indent=2, default=_json_default))
-    return path
+def flatten_mapping(mapping: dict, prefix: str = "") -> list[dict]:
+    """Turn nested dict/list values into key,value rows for CSV."""
+    rows: list[dict] = []
+    for key, value in mapping.items():
+        full_key = f"{prefix}{key}" if not prefix else f"{prefix}.{key}"
+        if isinstance(value, dict):
+            rows.extend(flatten_mapping(value, full_key))
+        elif isinstance(value, (list, tuple)):
+            if value and isinstance(value[0], dict):
+                for i, item in enumerate(value):
+                    rows.extend(flatten_mapping(item, f"{full_key}[{i}]"))
+            else:
+                rows.append({"key": full_key, "value": " | ".join(str(v) for v in value)})
+        else:
+            rows.append({"key": full_key, "value": value})
+    return rows
 
 
-def _sanitize(obj):
-    if isinstance(obj, dict):
-        return {k: _sanitize(v) for k, v in obj.items()}
-    if isinstance(obj, list):
-        return [_sanitize(v) for v in obj]
-    if isinstance(obj, float) and (np.isnan(obj) or np.isinf(obj)):
-        return None
-    return obj
-
-
-def _json_default(obj):
-    if isinstance(obj, (np.integer,)):
-        return int(obj)
-    if isinstance(obj, (np.floating,)):
-        return float(obj)
-    if isinstance(obj, (np.ndarray,)):
-        return obj.tolist()
-    if isinstance(obj, pd.Timestamp):
-        return obj.isoformat()
-    raise TypeError(f"Not JSON serializable: {type(obj)}")
+def save_mapping_csv(mapping: dict, name: str) -> Path:
+    return save_csv(pd.DataFrame(flatten_mapping(mapping)), name)
 
 
 def print_section(title: str) -> None:

@@ -21,7 +21,7 @@ from src.inventory import compare_policies, residual_std, tune_z
 from src.metrics import regression_report
 from src.models import baseline_predictions, make_demand_labels, train_classifiers, train_regressors
 from src.preprocessor import temporal_split
-from src.utils import ensure_output_dirs, print_section, save_csv, save_json
+from src.utils import ensure_output_dirs, print_section, save_csv, save_mapping_csv
 from src import visualize as viz
 
 
@@ -57,7 +57,7 @@ def run(data_path: Path | None = None) -> dict:
     df = load_dataset(data_path)
     profile = dataset_profile(df)
     print(profile)
-    save_json(profile, "dataset_profile.json")
+    save_mapping_csv(profile, "dataset_profile.csv")
 
     print_section("2. Exploratory charts")
     viz.plot_daily_sales(df)
@@ -181,10 +181,13 @@ def run(data_path: Path | None = None) -> dict:
 
     print_section("7. SKU clustering")
     skus = sku_features(df)
-    clustered, cluster_metrics = cluster_skus(skus, n_clusters=3)
+    clustered, cluster_metrics, segment_means = cluster_skus(skus, n_clusters=3)
     save_csv(clustered, "sku_segments.csv")
+    save_csv(segment_means, "sku_segment_means.csv")
+    save_mapping_csv(cluster_metrics, "clustering_metrics.csv")
     viz.plot_clusters(clustered)
     print(cluster_metrics)
+    print(segment_means.to_string(index=False))
 
     print_section("8. Business insights")
     vendor_imp = None
@@ -193,32 +196,69 @@ def run(data_path: Path | None = None) -> dict:
             (importance["model"] == best_vendor.name) & (importance["feature_set"] == "vendor")
         ].sort_values("importance", ascending=False)
     insights = business_insights(df, vendor_imp)
-    insights["temporal_cutoff"] = str(split.cutoff.date())
-    insights["demand_class_thresholds"] = {"LOW_lt": low_q, "HIGH_gt": high_q}
-    insights["best_regression"] = best_vendor.metrics
-    insights["best_operational_regression"] = best_operational.metrics
-    insights["best_classifier"] = best_clf.metrics
-    insights["inventory_policy"] = policy_df.to_dict(orient="records")
-    insights["selected_z"] = z_star
-    insights["residual_std"] = sigma
-    insights["clustering"] = {
-        "silhouette": cluster_metrics["silhouette"],
-        "davies_bouldin": cluster_metrics["davies_bouldin"],
-        "n_clusters": cluster_metrics["n_clusters"],
-    }
-    save_json(insights, "business_insights.json")
+    save_csv(
+        pd.DataFrame(insights["top_features"]),
+        "top_features.csv",
+    )
+    save_csv(
+        pd.DataFrame(
+            list(insights["mean_units_by_category"].items()),
+            columns=["Category", "mean_units_sold"],
+        ),
+        "sales_by_category.csv",
+    )
+    save_csv(
+        pd.DataFrame(
+            list(insights["mean_units_by_region"].items()),
+            columns=["Region", "mean_units_sold"],
+        ),
+        "sales_by_region.csv",
+    )
+    save_csv(
+        pd.DataFrame(
+            list(insights["promotion_impact"].items()),
+            columns=["Holiday_Promotion", "mean_units_sold"],
+        ),
+        "sales_by_promotion.csv",
+    )
+    save_csv(
+        pd.DataFrame(
+            list(insights["weather_impact"].items()),
+            columns=["Weather Condition", "mean_units_sold"],
+        ),
+        "sales_by_weather.csv",
+    )
+    save_csv(
+        pd.DataFrame(
+            list(insights["seasonality_label_impact"].items()),
+            columns=["Seasonality", "mean_units_sold"],
+        ),
+        "sales_by_seasonality.csv",
+    )
+    save_csv(
+        pd.DataFrame({"note": insights["data_quality_notes"]}),
+        "data_quality_notes.csv",
+    )
 
     summary = {
-        "profile": profile,
-        "cutoff": str(split.cutoff.date()),
-        "best_vendor_regression": best_vendor.metrics,
-        "best_operational_regression": best_operational.metrics,
-        "best_classifier": best_clf.metrics,
-        "inventory": policy_df.to_dict(orient="records"),
-        "clustering": insights["clustering"],
+        "temporal_cutoff": str(split.cutoff.date()),
+        "LOW_lt": low_q,
+        "HIGH_gt": high_q,
+        "selected_z": z_star,
+        "residual_std": sigma,
+        "inventory_sold_corr": insights["inventory_sold_corr"],
+        "vendor_forecast_corr": insights["vendor_forecast_corr"],
+        "price_competitor_corr": insights["price_competitor_corr"],
+        "mean_inventory": insights["mean_inventory"],
+        "mean_units_sold": insights["mean_units_sold"],
+        "mean_leftover": insights["mean_leftover"],
+        **{f"best_vendor_{k}": v for k, v in best_vendor.metrics.items()},
+        **{f"best_operational_{k}": v for k, v in best_operational.metrics.items()},
+        **{f"best_classifier_{k}": v for k, v in best_clf.metrics.items()},
+        **{f"cluster_{k}": v for k, v in cluster_metrics.items()},
         "results_dir": str(RESULTS_DIR),
     }
-    save_json(summary, "run_summary.json")
+    save_mapping_csv(summary, "run_summary.csv")
     print_section("Done")
     print(f"Wrote artifacts to {RESULTS_DIR}")
     return summary

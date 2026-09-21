@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT))
 from src.feature_engineer import engineer_features
 from src.metrics import mape, mape_at_least, wape
 from src.preprocessor import temporal_split
+from src.utils import flatten_mapping
 
 
 def test_mape_handles_zeros():
@@ -74,3 +75,17 @@ def test_rolling_mean_does_not_include_current_sales():
     # Rolling mean at row 3: shift then roll → mean(1,2,3) = 2.0
     assert abs(out.loc[3, "ma_7_sales"] - 2.0) < 1e-9
     assert out.loc[3, "ma_7_sales"] != out.loc[3, "Units Sold"]
+
+
+def test_flatten_mapping_writes_csv_rows_not_nested_objects():
+    rows = flatten_mapping(
+        {
+            "cutoff": "2023-08-08",
+            "best": {"WAPE": 5.3, "MAE": 7.2},
+            "notes": ["a", "b"],
+        }
+    )
+    as_dict = {row["key"]: row["value"] for row in rows}
+    assert as_dict["cutoff"] == "2023-08-08"
+    assert as_dict["best.WAPE"] == 5.3
+    assert as_dict["notes"] == "a | b"

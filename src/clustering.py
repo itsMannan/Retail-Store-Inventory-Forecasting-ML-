@@ -27,7 +27,7 @@ def sku_features(df: pd.DataFrame) -> pd.DataFrame:
     return grouped
 
 
-def cluster_skus(sku_df: pd.DataFrame, n_clusters: int = 3) -> tuple[pd.DataFrame, dict]:
+def cluster_skus(sku_df: pd.DataFrame, n_clusters: int = 3) -> tuple[pd.DataFrame, dict, pd.DataFrame]:
     feature_cols = ["mean_sales", "std_sales", "mean_price", "mean_inventory", "turnover", "cv_sales"]
     X = sku_df[feature_cols].to_numpy(dtype=float)
     scaler = StandardScaler()
@@ -40,11 +40,11 @@ def cluster_skus(sku_df: pd.DataFrame, n_clusters: int = 3) -> tuple[pd.DataFram
     rank = out.groupby("cluster")["revenue"].mean().sort_values(ascending=False)
     mapping = {cluster: letter for letter, cluster in zip(["A", "B", "C", "D", "E"], rank.index)}
     out["segment"] = out["cluster"].map(mapping)
+    segment_means = out.groupby("segment")[feature_cols + ["revenue"]].mean().round(2).reset_index()
     metrics = {
         "n_clusters": n_clusters,
         "silhouette": round(float(silhouette_score(Xs, labels)), 4),
         "davies_bouldin": round(float(davies_bouldin_score(Xs, labels)), 4),
         "inertia": round(float(model.inertia_), 4),
-        "segment_means": out.groupby("segment")[feature_cols + ["revenue"]].mean().round(2).to_dict(),
     }
-    return out, metrics
+    return out, metrics, segment_means

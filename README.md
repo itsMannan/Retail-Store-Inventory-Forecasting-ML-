@@ -93,23 +93,27 @@ python3 -m src.pipeline
 python3 -m pytest tests/ -q
 ```
 
-Writes `results/*.csv`, `results/*.json`, and `results/visualizations/*.png`.
+Writes `results/*.csv` and `results/visualizations/*.png`. The project is Python (`.py`) plus CSV data/results — no notebooks and no JSON.
 
-Notebooks (same `src/` package):
+Python walkthrough (same `src/` package):
 
-1. [`notebooks/01_eda.ipynb`](notebooks/01_eda.ipynb) — profile, correlations, data-quality notes
-2. [`notebooks/02_preprocessing.ipynb`](notebooks/02_preprocessing.ipynb) — temporal split, train-only encoding
-3. [`notebooks/03_feature_engineering.ipynb`](notebooks/03_feature_engineering.ipynb) — lags, rolling stats, calendar encodings
-4. [`notebooks/04_modeling.ipynb`](notebooks/04_modeling.ipynb) — regression + classification
-5. [`notebooks/05_evaluation.ipynb`](notebooks/05_evaluation.ipynb) — metrics, policy, takeaways
+```bash
+python3 scripts/01_eda.py
+python3 scripts/02_preprocessing.py
+python3 scripts/03_feature_engineering.py
+python3 scripts/04_modeling.py
+python3 scripts/05_evaluation.py
+```
+
+Or one shot: `python3 scripts/run_all.py`
 
 ## Layout
 
 ```
 data/retail_store_inventory.csv
-notebooks/
+scripts/        01_eda.py … 05_evaluation.py, run_all.py
 src/            data_loader, preprocessor, feature_engineer, models, inventory, clustering, pipeline
-results/        metrics, predictions, charts
+results/        CSV metrics, predictions, PNG charts
 tests/          MAPE/WAPE, temporal split, lag leakage
 ```
 
