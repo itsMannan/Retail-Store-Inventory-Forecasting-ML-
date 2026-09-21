@@ -1,0 +1,18 @@
+# Core data-science stack for Retail Store Inventory Forecasting
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+
+# Machine learning
+scikit-learn>=1.5
+
+# Time-series / statistical forecasting
+statsmodels>=0.14
+
+# Visualization
+matplotlib>=3.8
+seaborn>=0.13
+
+# Notebook / interactive development
+jupyterlab>=4.2
+ipykernel>=6.29
